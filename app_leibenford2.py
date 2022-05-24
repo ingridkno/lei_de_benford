@@ -43,7 +43,9 @@ if uploaded_file is not None:
      fig.add_trace(go.Bar(
          x=[i for i in range(1,10)],
          y=x1,
-         name='Lei de Benford'
+         name='Lei de Benford',
+         text=y,
+         textposition='auto'
          ))
 
      fig.add_trace(go.Histogram(
@@ -56,7 +58,8 @@ if uploaded_file is not None:
          #     size=0.5
          # ),
          marker_color='#EB89B5',
-         opacity=0.75
+         opacity=0.75,
+         texttemplate="%{x}"
      ))
 
 
@@ -79,7 +82,9 @@ else:
      fig.add_trace(go.Bar(
          x=[i for i in range(1,10)],
          y=x1,
-         name='Lei de Benford'
+         name='Lei de Benford',
+         text=y,
+         textposition='auto'
          ))
      fig.update_layout(
          title_text='Lei de Benford', # title of plot
