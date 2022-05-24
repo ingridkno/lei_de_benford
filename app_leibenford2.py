@@ -83,5 +83,5 @@ else:
      st.plotly_chart(fig, use_container_width=True)
 
  
-image = Image.open('DataIN_logo_.png')
+image = Image.open('DataIN_logo_estreito.png')
 st.image(image, width=500, caption='Produzido por DataIN')
