@@ -47,7 +47,8 @@ if uploaded_file is not None:
          text=x1,
          textposition='auto'
          ))
-
+     
+     fig.update_traces(texttemplate='%{text:.2s}')
      fig.add_trace(go.Histogram(
          x=x0,
          histnorm='probability density',
@@ -71,7 +72,6 @@ if uploaded_file is not None:
          bargroupgap=0.1, # gap between bars of the same location coordinates
          font=dict(size=18)
      )
-
      st.plotly_chart(fig, use_container_width=True)
 else:
      st.header('Compare um conjunto de valores para indícios de fraude com a Lei de Benford')
@@ -86,6 +86,8 @@ else:
          text=x1,
          textposition='auto'
          ))
+     
+     fig.update_traces(texttemplate='%{text:.2s}')
      fig.update_layout(
          title_text='Lei de Benford', # title of plot
          xaxis_title_text='Primeiro Dígito', # xaxis label
