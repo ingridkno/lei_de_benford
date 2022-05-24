@@ -84,4 +84,4 @@ else:
 
  
 image = Image.open('DataIN_logo_.png')
-st.image(image, width=10, caption='Produzido por DataIN')
+st.image(image, width=1000, caption='Produzido por DataIN')
