@@ -59,7 +59,7 @@ if uploaded_file is not None:
          # ),
          marker_color='#EB89B5',
          opacity=0.75,
-         texttemplate="%{x0}"
+         texttemplate="%{x}"
      ))
 
 
