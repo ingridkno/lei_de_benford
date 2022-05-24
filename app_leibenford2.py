@@ -6,7 +6,10 @@ import numpy as np
 
 st.set_page_config(layout="wide")
 
+lei_benford = [math.log10(1 + 1/d) for d in range(1,10)]
+x1 = lei_benford
 
+st.title('Lei de Benford')
 
 uploaded_file = st.file_uploader("Insira uma planilha")
 
@@ -28,9 +31,6 @@ if uploaded_file is not None:
 
      st.write('Coluna selecionada:', coluna_escolhida)
 
-     lei_benford = [math.log10(1 + 1/d) for d in range(1,10)]
-     #st.dataframe(pd.to_numeric(df[coluna_escolhida].astype(str).str[0], errors='coerce').dropna())
-     #df.loc[df[coluna_escolhida].astype(str).str.isnumeric(),coluna_escolhida])
 
 
      lista_primeiros_digitos= pd.to_numeric(df[coluna_escolhida].astype(str).str[0], errors='coerce').dropna()
@@ -38,8 +38,7 @@ if uploaded_file is not None:
 
      ###figure
      x0 = [s for s in lista_primeiros_digitos.tolist() if s != 0]
-     x1 = lei_benford
-
+    
      fig = go.Figure() 
 
      fig.add_trace(go.Bar(
@@ -71,3 +70,8 @@ if uploaded_file is not None:
      )
 
      st.plotly_chart(fig, use_container_width=True)
+ else:
+     st.subtitle('Compare um conjunto de valores para indícios de fraude com a Lei de Benford')
+     st.write('A Lei de Benford, ou lei do primeiro dígito, refere-se à distribuição de dígitos.') 
+     st.write('Ao contrário do que se pensa, a distribuição dos primeiros números não é homogênea e, sim, heterogênea com o primeiro dígito tendo maior probablidade de ser pequeno.') 
+
