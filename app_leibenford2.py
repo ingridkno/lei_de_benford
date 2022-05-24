@@ -15,7 +15,7 @@ uploaded_file = st.file_uploader("Insira uma planilha")
 
 if uploaded_file is not None:
      # can be used wherever a "file-like" object is accepted:
-     number = st.number_input('insert a number', value=0, step=1)
+     number = st.number_input('Insira o número da linha representante da coluna', value=0, step=1)
      st.write('Número da linha para representar colunas:', number)
 
      header=int(number)
