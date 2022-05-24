@@ -70,8 +70,15 @@ if uploaded_file is not None:
      )
 
      st.plotly_chart(fig, use_container_width=True)
- else:
+else:
      st.subtitle('Compare um conjunto de valores para indícios de fraude com a Lei de Benford')
      st.write('A Lei de Benford, ou lei do primeiro dígito, refere-se à distribuição de dígitos.') 
      st.write('Ao contrário do que se pensa, a distribuição dos primeiros números não é homogênea e, sim, heterogênea com o primeiro dígito tendo maior probablidade de ser pequeno.') 
-
+     
+     fig = go.Figure()
+     fig.add_trace(go.Bar(
+         x=[i for i in range(1,10)],
+         y=x1,
+         name='Lei de Benford'
+         ))
+     st.plotly_chart(fig, use_container_width=True)
