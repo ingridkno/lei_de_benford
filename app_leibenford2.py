@@ -65,7 +65,8 @@ if uploaded_file is not None:
          xaxis_title_text='Primeiro Dígito', # xaxis label
          yaxis_title_text='Densidade de Probabilidade', # yaxis label
          bargap=0.2, # gap between bars of adjacent location coordinates
-         bargroupgap=0.1 # gap between bars of the same location coordinates
+         bargroupgap=0.1, # gap between bars of the same location coordinates
+         font=dict(size=18)
      )
 
      st.plotly_chart(fig, use_container_width=True)
@@ -80,6 +81,15 @@ else:
          y=x1,
          name='Lei de Benford'
          ))
+     fig.update_layout(
+         title_text='Lei de Benford', # title of plot
+         xaxis_title_text='Primeiro Dígito', # xaxis label
+         yaxis_title_text='Densidade de Probabilidade', # yaxis label
+         bargap=0.2, # gap between bars of adjacent location coordinates
+         bargroupgap=0.1, # gap between bars of the same location coordinates
+         font=dict(size=18)
+     )
+     
      st.plotly_chart(fig, use_container_width=True)
 
  
