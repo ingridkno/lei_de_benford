@@ -8,12 +8,12 @@ st.set_page_config(layout="wide")
 
 
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("Insira uma planilha")
 
 if uploaded_file is not None:
      # can be used wherever a "file-like" object is accepted:
-     number = st.number_input('insert a number', value=1, step=1)
-     st.write('the current number is ', number)
+     number = st.number_input('insert a number', value=0, step=1)
+     st.write('Número da linha para representar colunas:', number)
 
      header=int(number)
      df = pd.read_excel(uploaded_file, header=header)
@@ -26,7 +26,7 @@ if uploaded_file is not None:
           'Escolha uma coluna para análise',
           df.columns)
 
-     st.write('You selected:', coluna_escolhida)
+     st.write('Coluna selecionada:', coluna_escolhida)
 
      lei_benford = [math.log10(1 + 1/d) for d in range(1,10)]
      #st.dataframe(pd.to_numeric(df[coluna_escolhida].astype(str).str[0], errors='coerce').dropna())
