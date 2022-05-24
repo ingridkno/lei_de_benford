@@ -3,6 +3,7 @@ import math
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
+from PIL import Image
 
 st.set_page_config(layout="wide")
 
@@ -30,9 +31,7 @@ if uploaded_file is not None:
           df.columns)
 
      st.write('Coluna selecionada:', coluna_escolhida)
-
-
-
+     
      lista_primeiros_digitos= pd.to_numeric(df[coluna_escolhida].astype(str).str[0], errors='coerce').dropna()
 
 
@@ -82,3 +81,7 @@ else:
          name='Lei de Benford'
          ))
      st.plotly_chart(fig, use_container_width=True)
+
+ 
+image = Image.open('DataIN_logo_.png')
+st.image(image, caption='Sunrise by the mountains')
