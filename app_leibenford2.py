@@ -37,6 +37,7 @@ if uploaded_file is not None:
 
      ###figure
      x0 = [s for s in lista_primeiros_digitos.tolist() if s != 0]
+     values, counts_x0 = np.unique(x0, return_counts=True)
     
      fig = go.Figure() 
 
@@ -60,7 +61,7 @@ if uploaded_file is not None:
          # ),
          marker_color='#EB89B5',
          opacity=0.75,
-         text=["{:.2f}".format(i) for i in x0],
+         text=["{:.2f}".format(i/counts_x0.sum()) for i in counts_x0],
      ))
 
 
