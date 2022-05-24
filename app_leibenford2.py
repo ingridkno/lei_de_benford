@@ -48,7 +48,7 @@ if uploaded_file is not None:
          textposition='auto'
          ))
      
-     fig.update_traces(texttemplate='%{text:.2s}')
+     fig.update_traces(texttemplate='%{percent}')
      fig.add_trace(go.Histogram(
          x=x0,
          histnorm='probability density',
@@ -87,7 +87,7 @@ else:
          textposition='auto'
          ))
      
-     fig.update_traces(texttemplate='%{text:.2s}')
+     fig.update_traces(texttemplate='%{percent}')
      fig.update_layout(
          title_text='Lei de Benford', # title of plot
          xaxis_title_text='Primeiro Dígito', # xaxis label
