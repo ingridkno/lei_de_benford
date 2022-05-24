@@ -59,7 +59,8 @@ if uploaded_file is not None:
          #     size=0.5
          # ),
          marker_color='#EB89B5',
-         opacity=0.75
+         opacity=0.75,
+         text=["{:.2f}".format(i) for i in x0],
      ))
 
 
