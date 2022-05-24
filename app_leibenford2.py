@@ -44,7 +44,7 @@ if uploaded_file is not None:
          x=[i for i in range(1,10)],
          y=x1,
          name='Lei de Benford',
-         text=y,
+         text=x1,
          textposition='auto'
          ))
 
@@ -59,7 +59,7 @@ if uploaded_file is not None:
          # ),
          marker_color='#EB89B5',
          opacity=0.75,
-         texttemplate="%{x}"
+         texttemplate="%{x0}"
      ))
 
 
@@ -83,7 +83,7 @@ else:
          x=[i for i in range(1,10)],
          y=x1,
          name='Lei de Benford',
-         text=y,
+         text=x1,
          textposition='auto'
          ))
      fig.update_layout(
